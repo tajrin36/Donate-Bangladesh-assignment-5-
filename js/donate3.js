@@ -12,12 +12,19 @@ document
     //coin ammount inside the card
     const coinAmount = getSpanValueById("coin-amount-3");
 
+    //heading-text
+    const headingText3 = getHeadingTextById("quota-heading");
+    console.log(headingText3);
+
+    //current date and time
+    const currentDateTime = new Date().toString();
+
     if (isNaN(donateAmount) || donateAmount <= 0) {
       alert("Please enter a valid donation amount!");
-      document.getElementById('my_modal_7').classList.add('hidden');
+      document.getElementById("my_modal_7").classList.add("hidden");
     } else if (availableAmount <= 0 || donateAmount > availableAmount) {
       alert("Sorry! Insufficient available balance to donate!");
-      document.getElementById('my_modal_7').classList.add('hidden');
+      document.getElementById("my_modal_7").classList.add("hidden");
     } else {
       //update coin balance
       const newBalance = donateAmount + coinAmount;
@@ -28,9 +35,26 @@ document
       document.getElementById("available-amount").innerText =
         availableNewBalance;
 
-         // modal
+      // modal
       document.getElementById("my_modal_7").showModal();
+
+      const div = document.createElement("div");
+      div.classList.add(
+        "border",
+        "rounded-2xl",
+        "flex",
+        "flex-col",
+        "gap-y-4",
+        "mb-4",
+        "p-5"
+      );
+      div.innerHTML = `
+    <h2 class="text-[#111] text-xl font-bold">${donateAmount} taka is ${headingText3},Bangladesh</h2>
+    <p class="text-base font-light text-neutral-900">
+        Date: ${currentDateTime}
+      </p>
+    `;
+
+      document.getElementById("history-container").appendChild(div);
     }
   });
-
-

@@ -40,60 +40,66 @@
 
     <body class="lexend-font">
 
-        <!-- navbar section -->
-        <section class="bg-[#F9F7F3] p-5">
-            <div class="md:container md:mx-auto">
-                <div class="flex gap-4 md:justify-between">
+        <header class="md:sticky md:top-0">
 
-                    <!-- nav button -->
-                    <div>
-                        <a href="faq.html" id=""
-                            class="btn bg-[#B4F461] text-[#111] text-base md:text-xl  md:font-semibold">Blog</a>
-                        <!-- <a id="blog-btn" class="btn bg-[#B4F461] text-[#111] text-base md:text-xl  md:font-semibold" >Blog</a> -->
-                    </div>
+            <div class="md:absolute md:inset-0 md:z-0 md:backdrop-blur-lg bg-white/40"></div>
+            <!-- navbar section -->
+            <section class="bg-[#F9F7F3] relative z-10 p-5">
+                <div class="md:container md:mx-auto">
+                    <div class="flex gap-4 md:justify-between">
 
-                    <!-- nav middle -->
-                    <div class="flex items-center gap-3">
+                        <!-- nav button -->
                         <div>
-                            <img src="./assets/logo.png" alt="">
+                            <a href="faq.html" id=""
+                                class="btn bg-[#B4F461] text-[#111] text-base md:text-xl  md:font-semibold">Blog</a>
+                            <!-- <a id="blog-btn" class="btn bg-[#B4F461] text-[#111] text-base md:text-xl  md:font-semibold" >Blog</a> -->
                         </div>
-                        <div class="text-[#111] text-base md:text-xl font-semibold">Donate Bangladesh</div>
+
+                        <!-- nav middle -->
+                        <div class="flex items-center gap-3">
+                            <div>
+                                <img src="./assets/logo.png" alt="">
+                            </div>
+                            <div class="text-[#111] text-base md:text-xl font-semibold">Donate Bangladesh</div>
+                        </div>
+
+                        <!-- nav coin section -->
+                        <div class="flex items-center gap-3">
+                            <div>
+                                <img src="./assets/coin.png" alt="">
+                            </div>
+                            <div class="textColor text-base md:text-xl font-medium"><span
+                                    id="available-amount">5500</span>
+                                BDT</div>
+                        </div>
                     </div>
 
-                    <!-- nav coin section -->
-                    <div class="flex items-center gap-3">
-                        <div>
-                            <img src="./assets/coin.png" alt="">
-                        </div>
-                        <div class="textColor text-base md:text-xl font-medium"><span id="available-amount">5500</span>
-                            BDT</div>
+
+                </div>
+            </section>
+
+            <!-- banner section -->
+            <section class="mt-14 relative z-10">
+
+                <div class="md:container md:mx-auto flex justify-center gap-4">
+                    <!-- button 1 -->
+                    <div class="">
+                        <a id="donation-button" onclick="handleDonationButton()"
+                            class="btn bg-white text-[#111] text-base md:text-xl  md:font-semibold secondary-color">Donation</a>
+                    </div>
+
+                    <!-- button 2 -->
+                    <div class="">
+                        <a id="history-button" onclick="handleHistoryButton()"
+                            class="btn bg-white text-[#111] text-base md:text-xl  md:font-semibold">History</a>
                     </div>
                 </div>
-
-
-            </div>
-        </section>
-
-        <!-- banner section -->
-        <section class="mt-14">
-
-            <div class="md:container md:mx-auto flex justify-center gap-4">
-                <!-- button 1 -->
-                <div class="">
-                    <a id=""
-                        class="btn bg-white text-[#111] text-base md:text-xl  md:font-semibold secondary-color">Donation</a>
-                </div>
-
-                <!-- button 2 -->
-                <div class="">
-                    <a class="btn bg-white text-[#111] text-base md:text-xl  md:font-semibold">History</a>
-                </div>
-            </div>
-        </section>
+            </section>
+        </header>
 
         <!-- main section -->
         <main>
-            <section class="md:container md:mx-auto mt-7 ">
+            <section id="donation-section" class="md:container md:mx-auto mt-7 ">
                 <!-- card 1 -->
                 <div
                     class="flex flex-col p-6 space-y-5 md:flex-row md:space-y-0 md:gap-4 items-center border rounded-lg mb-5">
@@ -132,8 +138,26 @@
                         </div>
 
                         <!-- button -->
-                        <button id="donate-btn-1"
-                            class="btn w-full bg-[#B4F461] text-xl font-semibold text-[#111]">Donate Now</button>
+                        <button id="donate-btn-1" onclick="my_modal_5.showModal()"
+                            class="btn w-full bg-[#B4F461] text-xl font-semibold text-[#111]">Donate Now
+                        </button>
+                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle text-center">
+                            <div class="modal-box space-y-3">
+                                <h3 class="text-3xl font-bold">Congrates!</h3>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/coin.png" alt="">
+                                </div>
+                                <p class="py-4">You Have Donated for Humankind</p>
+                                <h2 class="text-lg font-bold">Successfully</h2>
+                                <div class="modal-action flex items-center justify-center">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+
                     </div>
                 </div>
 
@@ -175,8 +199,24 @@
                         </div>
 
                         <!-- button -->
-                        <button id="donate-btn-2"
+                        <button id="donate-btn-2" onclick="my_modal_6.showModal()"
                             class="btn w-full bg-[#B4F461] text-xl font-semibold text-[#111]">Donate Now</button>
+                        <dialog id="my_modal_6" class="modal modal-bottom sm:modal-middle text-center">
+                            <div class="modal-box space-y-3">
+                                <h3 class="text-3xl font-bold">Congrates!</h3>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/coin.png" alt="">
+                                </div>
+                                <p class="py-4">You Have Donated for Humankind</p>
+                                <h2 class="text-lg font-bold">Successfully</h2>
+                                <div class="modal-action flex items-center justify-center">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
                 </div>
 
@@ -219,10 +259,31 @@
                         </div>
 
                         <!-- button -->
-                        <button id="donate-btn-3"
+                        <button id="donate-btn-3" onclick="my_modal_7.showModal()"
                             class="btn w-full bg-[#B4F461] text-xl font-semibold text-[#111]">Donate Now</button>
+                        <dialog id="my_modal_7" class="modal modal-bottom sm:modal-middle text-center">
+                            <div class="modal-box space-y-3">
+                                <h3 class="text-3xl font-bold">Congrates!</h3>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/coin.png" alt="">
+                                </div>
+                                <p class="py-4">You Have Donated for Humankind</p>
+                                <h2 class="text-lg font-bold">Successfully</h2>
+                                <div class="modal-action flex items-center justify-center">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
                 </div>
+            </section>
+
+            <!-- history section -->
+            <section id="history-section">
+                <h1>hii!</h1>
             </section>
 
         </main>
@@ -235,6 +296,7 @@
         <script src="./js/donate1.js"></script>
         <script src="./js/donate2.js"></script>
         <script src="./js/donate3.js"></script>
+        <script src="./js/feature.js"></script>
     </body>
 
 </html>

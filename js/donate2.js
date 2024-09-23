@@ -14,8 +14,10 @@ document
 
     if (isNaN(donateAmount2) || donateAmount2 <= 0) {
       alert("Please enter a valid donation amount!");
+      document.getElementById('my_modal_6').classList.add('hidden');
     } else if (availableAmount2 <= 0 || donateAmount2 > availableAmount2) {
       alert("Sorry! Insufficient available balance to donate!");
+      document.getElementById('my_modal_6').classList.add('hidden');
     } else {
       //update coin balance
       const newBalance2 = donateAmount2 + coinAmount2;
@@ -25,5 +27,8 @@ document
       const availableNewBalance = availableAmount2 - donateAmount2;
       document.getElementById("available-amount").innerText =
         availableNewBalance;
+
+        // modal
+      document.getElementById("my_modal_6").showModal();
     }
   });

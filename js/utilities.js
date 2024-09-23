@@ -21,8 +21,8 @@ function handleDonationButton() {
     const historyButton = document.getElementById('history-button');
 
     donationButton.style.backgroundColor = "#B4F461";
-    
     historyButton.style.backgroundColor = "white";
+    
     
 }
 
@@ -32,6 +32,7 @@ function handleHistoryButton(){
 
     historyButton.style.backgroundColor = "#B4F461";
     donationButton.style.backgroundColor = "white";
+    
 }
 
 function showSectionByID(id){

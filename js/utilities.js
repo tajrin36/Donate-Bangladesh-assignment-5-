@@ -11,6 +11,11 @@ function getSpanValueById(id) {
   return spanNumber;
 }
 
+function getHeadingTextById(id) {
+    const headingText = document.getElementById(id).innerText;
+    return headingText;
+}
+
 function handleDonationButton() {
     const donationButton = document.getElementById('donation-button');
     const historyButton = document.getElementById('history-button');
